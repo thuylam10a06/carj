@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lam's Colorful World ♡</title>
+<style>
+:root {
+  --yellow: #ffe66d;
+  --blue: #79d8ff;
+  --green: #a8f0a1;
+  --pink: #ffb9d8;
+  --purple: #d9baff;
+  --ink: #34304b;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background:
+    radial-gradient(circle at 10% 5%, #fff1a9 0 9%, transparent 25%),
+    radial-gradient(circle at 90% 20%, #c4f2ff 0 10%, transparent 27%),
+    radial-gradient(circle at 20% 80%, #fbd3e7 0 10%, transparent 25%),
+    #fffdf7;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+nav {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 12px; padding: 18px 7%; flex-wrap: wrap;
+}
+.logo { font-size: 21px; font-weight: 900; }
+nav a { font-size: 14px; font-weight: bold; }
+.navlinks { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero {
+  width: min(1100px, 90%); margin: 28px auto 55px;
+  display: grid; grid-template-columns: 1.15fr .85fr;
+  align-items: center; gap: 25px;
+}
+.tag {
+  display: inline-block; background: white; border: 2px solid var(--ink);
+  border-radius: 50px; padding: 9px 15px; font-weight: bold;
+  box-shadow: 3px 3px 0 var(--ink); transform: rotate(-2deg);
+}
+h1 { font-size: clamp(42px, 7vw, 76px); line-height: 1.04; margin: 22px 0; }
+.rainbow {
+  background: linear-gradient(90deg,#ff719f,#ffad4f,#e4bc22,#39b97c,#36aeea,#a77aee);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.intro { font-size: 17px; line-height: 1.8; max-width: 520px; }
+.btn {
+  display: inline-block; margin: 10px 8px 0 0; padding: 12px 18px;
+  background: var(--yellow); border: 2px solid var(--ink);
+  border-radius: 15px; font-weight: bold;
+  box-shadow: 4px 4px 0 var(--ink); transition: .2s;
+}
+.btn:hover { transform: translate(3px,3px); box-shadow: 1px 1px 0 var(--ink); }
+.pets {
+  min-height: 320px; border: 3px solid var(--ink); border-radius: 45px;
+  background: linear-gradient(145deg,#fff1a4,#ffc8e5,#bcecff);
+  display: flex; align-items: center; justify-content: center;
+  gap: 4px; position: relative; overflow: hidden;
+  box-shadow: 9px 9px 0 var(--ink);
+}
+.pet { font-size: clamp(95px, 15vw, 155px); animation: float 3s ease-in-out infinite; }
+.pet.dog { animation-delay: -.9s; }
+.sparkle { position: absolute; font-size: 27px; animation: twinkle 2s infinite; }
+.s1 { top: 16%; left: 14%; }
+.s2 { top: 15%; right: 15%; animation-delay: .5s; }
+.s3 { bottom: 13%; left: 48%; animation-delay: 1s; }
+@keyframes float { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-13px) rotate(4deg); } }
+@keyframes twinkle { 0%,100% { transform: scale(.8) rotate(0); } 50% { transform: scale(1.25) rotate(18deg); } }
+section { width: min(1050px,90%); margin: 65px auto; scroll-margin-top: 20px; }
+.section-title { font-size: clamp(28px,5vw,42px); margin-bottom: 22px; }
+.grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.card {
+  padding: 24px; border: 2.5px solid var(--ink); border-radius: 25px;
+  box-shadow: 5px 5px 0 var(--ink); transition: transform .2s;
+}
+.card:hover { transform: translateY(-6px) rotate(-1deg); }
+.yellow { background: #fff0a3; }
+.blue { background: #b9eaff; }
+.green { background: #c7f5be; }
+.pink { background: #ffd0e4; }
+.purple { background: #e5d2ff; }
+.card .emoji { font-size: 38px; }
+.card h3 { margin: 12px 0 8px; }
+.card p { line-height: 1.7; margin-bottom: 0; }
+.favorites { display: flex; flex-wrap: wrap; gap: 12px; }
+.chip {
+  background: white; padding: 12px 17px; border: 2px solid var(--ink);
+  border-radius: 50px; font-weight: bold; box-shadow: 3px 3px 0 var(--ink);
+}
+.socials { display: flex; flex-wrap: wrap; gap: 14px; }
+.social {
+  flex: 1 1 150px; padding: 18px; border: 2px solid var(--ink);
+  border-radius: 20px; text-align: center; font-weight: 900;
+  box-shadow: 4px 4px 0 var(--ink); transition: .2s;
+}
+.social:hover { transform: scale(1.04); }
+.note { font-size: 13px; line-height: 1.7; color: #5f5872; }
+footer { text-align: center; padding: 35px 15px; line-height: 1.9; }
+.heart { color: #ff5c91; animation: beat 1s infinite; display: inline-block; }
+@keyframes beat { 50% { transform: scale(1.3); } }
+@media(max-width:700px) {
+  nav { padding: 17px 5%; }
+  .hero { grid-template-columns: 1fr; margin-top: 20px; }
+  .pets { min-height: 250px; }
+  .grid { grid-template-columns: 1fr; }
+  section { margin: 48px auto; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#">🌈 Lam's World</a>
+  <div class="navlinks">
+    <a href="#about">About</a>
+    <a href="#likes">Favorites</a>
+    <a href="#social">Socials</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <span class="tag">✿ welcome to my little world ✿</span>
+    <h1>Hi, I'm <span class="rainbow">Lam!</span> ♡</h1>
+    <p class="intro">
+      Xin chào! Đây là góc nhỏ đầy màu sắc của mình.
+      Một chút âm nhạc, một chút dễ thương và thật nhiều
+      điều thú vị. Cứ thoải mái khám phá nhé! 🐾
+    </p>
+    <a class="btn" href="#about">Khám phá thôi ✨</a>
+    <a class="btn" href="#social">Find me ♡</a>
+  </div>
+  <div class="pets" aria-label="Mèo và chó hoạt hình dễ thương">
+    <span class="sparkle s1">✦</span>
+    <span class="sparkle s2">✧</span>
+    <span class="sparkle s3">♡</span>
+    <span class="pet">🐱</span>
+    <span class="pet dog">🐶</span>
+  </div>
+</header>
+
+<section id="about">
+  <h2 class="section-title">🌼 A little about me</h2>
+  <div class="grid">
+    <article class="card yellow">
+      <div class="emoji">🎀</div>
+      <h3>My name</h3>
+      <p>Nguyễn Thùy Lam<br>Nickname: Lam ♡</p>
+    </article>
+    <article class="card blue">
+      <div class="emoji">🎂</div>
+      <h3>My birthday</h3>
+      <p>7 December · 07/12<br>Tháng sinh của mùa lễ hội!</p>
+    </article>
+    <article class="card green">
+      <div class="emoji">🐾</div>
+      <h3>My vibe</h3>
+      <p>Colorful, cute, playful and a little bit chaotic! 🌈</p>
+    </article>
+  </div>
+</section>
+
+<section id="likes">
+  <h2 class="section-title">💖 Things I love</h2>
+  <div class="grid">
+    <article class="card pink">
+      <div class="emoji">🎤</div>
+      <h3>Music time</h3>
+      <p>Fan của Soobin Hoàng Sơn. Âm nhạc luôn làm ngày thường thú vị hơn!</p>
+    </article>
+    <article class="card purple">
+      <div class="emoji">🐈</div>
+      <h3>Cats & dogs</h3>
+      <p>Mê động vật, đặc biệt là những em mèo và cún hoạt hình chibi siêu đáng yêu.</p>
+    </article>
+    <article class="card blue">
+      <div class="emoji">🎮</div>
+      <h3>My fun corner</h3>
+      <p>Game, anime, những thứ dễ thương và các ý tưởng sáng tạo đầy màu sắc.</p>
+    </article>
+  </div>
+  <h3 style="margin-top:32px">🌈 My happy list</h3>
+  <div class="favorites">
+    <span class="chip">💛 Yellow</span>
+    <span class="chip">💙 Sky blue</span>
+    <span class="chip">💚 Green</span>
+    <span class="chip">💗 Pink</span>
+    <span class="chip">💜 Purple</span>
+    <span class="chip">🐱 Chibi cats</span>
+    <span class="chip">🐶 Cute dogs</span>
+    <span class="chip">🎶 Soobin</span>
+  </div>
+</section>
+
+<section id="social">
+  <h2 class="section-title">📱 Find me online!</h2>
+  <p class="intro">Ghé thăm mình trên mạng xã hội nha ♡</p>
+  <div class="socials">
+    <!-- Thay YOUR_USERNAME bằng username thật của mày -->
+    <a class="social pink" href="https://www.instagram.com/" target="_blank" rel="noopener">📸 Instagram ↗</a>
+    <a class="social blue" href="https://www.facebook.com/" target="_blank" rel="noopener">💙 Facebook ↗</a>
+    <a class="social yellow" href="https://www.tiktok.com/" target="_blank" rel="noopener">🎵 TikTok ↗</a>
+  </div>
+  <p class="note">
+    Lưu ý: các nút hiện đang mở trang chủ của từng nền tảng.
+    Hãy thay đường dẫn bằng link hồ sơ của mày nếu muốn mọi người
+    vào đúng tài khoản. Chỉ chia sẻ tài khoản mà mày muốn công khai.
+  </p>
+</section>
+
+<footer>
+  Made with <span class="heart">♥</span> and lots of colors by Lam<br>
+  <span>🌼 Stay cute · Stay kind · Be yourself 🌼</span><br>
+  <span style="font-size:12px">© Lam's Colorful World</span>
+</footer>
+
+</body>
+</html>
